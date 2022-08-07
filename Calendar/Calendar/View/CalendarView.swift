@@ -143,27 +143,3 @@ extension CalendarView {
         
     }
 }
-
-extension Date {
-    mutating func addMonth(value: Int) {
-        let myCalendar = Calendar(identifier: .gregorian)
-        self = myCalendar.date(byAdding: .month, value: value, to: self)!
-    }
-    
-    func startDay() -> Int {
-        let myCalendar = Calendar(identifier: .gregorian)
-        return myCalendar.component(.weekday, from: self)
-    }
-    
-    func endDay() -> Int {
-        let myCalendar = Calendar(identifier: .gregorian)
-        
-        // Calculate start and end of the current year (or month with `.month`):
-        let interval = myCalendar.dateInterval(of: .month, for: self)!
-        
-        // Compute difference in days:
-        let days = myCalendar.dateComponents([.day], from: interval.start, to: interval.end).day!
-        return days
-    }
-    
-}
