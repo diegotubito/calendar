@@ -13,6 +13,7 @@ protocol CalendarDayViewDelegate: AnyObject {
 class CalendarDayView: UIView {
     var date: Date?
     var index: Int?
+    var height: CGFloat
     var isEnabled: Bool = true {
         didSet {
             isUserInteractionEnabled = isEnabled
@@ -21,24 +22,47 @@ class CalendarDayView: UIView {
     
     weak var delegate: CalendarDayViewDelegate?
     
-    public lazy var roundedBackground: UIImageView = {
-        let imageView = UIImageView()
+    public lazy var roundedView: RoundedView = {
+        let imageView = RoundedView()
         self.addSubview(imageView)
-        
+        imageView.layer.cornerRadius = height/2
         imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: 30),
-            imageView.heightAnchor.constraint(equalToConstant: 30),
+            imageView.widthAnchor.constraint(equalToConstant: height),
+            imageView.heightAnchor.constraint(equalToConstant: height),
         ])
         
         return imageView
     }()
     
+    init(height: CGFloat) {
+        self.height = height
+        super .init(frame: CGRect.zero)
+        commonInit()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func commonInit() {
+        backgroundColor = .yellow
+        roundedView.viewDidTapped = { [weak self] in
+            guard let self = self else { return }
+            self.delegate?.didSelectDayView(date: self.date)
+        }
+    }
+    
+}
+
+
+class RoundedView: UIView {
+    
+    var viewDidTapped: (() -> Void )?
+    
     public lazy var titleLabel: UILabel = {
-        roundedBackground.layer.cornerRadius = 30/2
-        
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 14)
@@ -65,16 +89,11 @@ class CalendarDayView: UIView {
     }
     
     func commonInit() {
-        let contentFrame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
-        frame = contentFrame
-        isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
         addGestureRecognizer(tapGesture)
-        
-        backgroundColor = .yellow
     }
     
     @objc private func viewTapped() {
-        delegate?.didSelectDayView(date: date)
+       viewDidTapped?()
     }
 }

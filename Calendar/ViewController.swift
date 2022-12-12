@@ -6,22 +6,29 @@
 //
 
 import UIKit
+import MessageUI
 
-class ViewController: UIViewController {
-
-    @IBOutlet weak var calendar: CalendarView!
+class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
+    @IBOutlet weak var stackView: UIStackView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        calendar.setInitialValue(currentDate: Date())
-        calendar.dateDidSelect = { [weak self] date in
-            guard let self = self else { return }
-            
-            print(date)
-            
-        }
+      
+        addCarrousel()
+       
     }
-
-}
-
+    func addCarrousel() {
+        let secondCarrousel = CarrouselView()
+        secondCarrousel.translatesAutoresizingMaskIntoConstraints = false
+        stackView.addArrangedSubview(secondCarrousel)
+        NSLayoutConstraint.activate([
+            secondCarrousel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
+            secondCarrousel.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.height / 2),
+            secondCarrousel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0)
+        ])
+    }
+    
+   
+ }

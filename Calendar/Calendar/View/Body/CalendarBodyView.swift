@@ -56,7 +56,8 @@ class CalendarBodyView: UIView {
             let rowStack = createRowStackView()
             
             for _ in 1...maxColumn {
-                let dayView = CalendarDayView()
+                print("\(self.frame.height)")
+                let dayView = CalendarDayView(height: 30)
                 dayView.delegate = self
                 rowStack.addArrangedSubview(dayView)
                 self.dayViews.append(dayView)
@@ -145,21 +146,21 @@ class CalendarBodyView: UIView {
     private func showDayWithStyle(dayView: CalendarDayView, title: String, style: DayStyle) {
         switch style {
         case .normal:
-            dayView.titleLabel.text = title
-            dayView.roundedBackground.backgroundColor = .white
-            dayView.titleLabel.textColor = .black
+            dayView.roundedView.titleLabel.text = title
+            dayView.roundedView.backgroundColor = .white
+            dayView.roundedView.titleLabel.textColor = .black
         case .highlighted:
-            dayView.titleLabel.text = title
-            dayView.roundedBackground.backgroundColor = .blue
-            dayView.titleLabel.textColor = .white
+            dayView.roundedView.titleLabel.text = title
+            dayView.roundedView.backgroundColor = .blue
+            dayView.roundedView.titleLabel.textColor = .white
         case .hidden:
-            dayView.titleLabel.text = title
-            dayView.roundedBackground.backgroundColor = .white
-            dayView.titleLabel.textColor = .clear
+            dayView.roundedView.titleLabel.text = title
+            dayView.roundedView.backgroundColor = .white
+            dayView.roundedView.titleLabel.textColor = .clear
         case .nonSelectable:
-            dayView.titleLabel.text = title
-            dayView.roundedBackground.backgroundColor = .white
-            dayView.titleLabel.textColor = .lightGray
+            dayView.roundedView.titleLabel.text = title
+            dayView.roundedView.backgroundColor = .white
+            dayView.roundedView.titleLabel.textColor = .lightGray
         }
     }
 }

@@ -129,8 +129,7 @@ extension CalendarView {
         headerView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             headerView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
-            headerView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0),
-            headerView.heightAnchor.constraint(equalToConstant: 35)
+            headerView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)
         ])
         
         weekDayView.translatesAutoresizingMaskIntoConstraints = false

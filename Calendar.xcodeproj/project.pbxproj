@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D62F06BA292C11D20033F125 /* CarrouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F06B9292C11D20033F125 /* CarrouselView.swift */; };
+		D62F06BC292C23C30033F125 /* CarrouselHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F06BB292C23C30033F125 /* CarrouselHeaderView.swift */; };
+		D62F06BE292C24440033F125 /* CarrouselCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F06BD292C24440033F125 /* CarrouselCollectionView.swift */; };
+		D62F06C0292C2A6B0033F125 /* CarrouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F06BF292C2A6B0033F125 /* CarrouselCell.swift */; };
+		D62F06C2292C2F3D0033F125 /* PlayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F06C1292C2F3D0033F125 /* PlayButtonView.swift */; };
 		F10EC4C1288C758B00DFD1F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10EC4C0288C758B00DFD1F1 /* AppDelegate.swift */; };
 		F10EC4C5288C758B00DFD1F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10EC4C4288C758B00DFD1F1 /* ViewController.swift */; };
 		F10EC4C8288C758B00DFD1F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F10EC4C6288C758B00DFD1F1 /* Main.storyboard */; };
@@ -20,6 +25,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D62F06B9292C11D20033F125 /* CarrouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrouselView.swift; sourceTree = "<group>"; };
+		D62F06BB292C23C30033F125 /* CarrouselHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrouselHeaderView.swift; sourceTree = "<group>"; };
+		D62F06BD292C24440033F125 /* CarrouselCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrouselCollectionView.swift; sourceTree = "<group>"; };
+		D62F06BF292C2A6B0033F125 /* CarrouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrouselCell.swift; sourceTree = "<group>"; };
+		D62F06C1292C2F3D0033F125 /* PlayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButtonView.swift; sourceTree = "<group>"; };
 		F10EC4BD288C758B00DFD1F1 /* Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F10EC4C0288C758B00DFD1F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F10EC4C4288C758B00DFD1F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +55,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D62F06B8292C11BE0033F125 /* Carrousel */ = {
+			isa = PBXGroup;
+			children = (
+				D62F06B9292C11D20033F125 /* CarrouselView.swift */,
+				D62F06BB292C23C30033F125 /* CarrouselHeaderView.swift */,
+				D62F06BD292C24440033F125 /* CarrouselCollectionView.swift */,
+				D62F06BF292C2A6B0033F125 /* CarrouselCell.swift */,
+				D62F06C1292C2F3D0033F125 /* PlayButtonView.swift */,
+			);
+			path = Carrousel;
+			sourceTree = "<group>";
+		};
 		F10EC4B4288C758A00DFD1F1 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +89,7 @@
 				F10EC4C0288C758B00DFD1F1 /* AppDelegate.swift */,
 				F10EC4C4288C758B00DFD1F1 /* ViewController.swift */,
 				F10EC4D4288C763300DFD1F1 /* Calendar */,
+				D62F06B8292C11BE0033F125 /* Carrousel */,
 				F10EC4C6288C758B00DFD1F1 /* Main.storyboard */,
 				F10EC4C9288C758C00DFD1F1 /* Assets.xcassets */,
 				F10EC4CB288C758C00DFD1F1 /* LaunchScreen.storyboard */,
@@ -198,13 +221,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D62F06C2292C2F3D0033F125 /* PlayButtonView.swift in Sources */,
 				F10EC4E3288C942900DFD1F1 /* CalendarDayView.swift in Sources */,
+				D62F06BA292C11D20033F125 /* CarrouselView.swift in Sources */,
 				F10EC4C5288C758B00DFD1F1 /* ViewController.swift in Sources */,
 				F10EC4DB288C77C100DFD1F1 /* CalendarHeaderView.swift in Sources */,
 				F10EC4DD288C7BD600DFD1F1 /* CalendarWeekDayView.swift in Sources */,
+				D62F06C0292C2A6B0033F125 /* CarrouselCell.swift in Sources */,
+				D62F06BC292C23C30033F125 /* CarrouselHeaderView.swift in Sources */,
 				F10EC4C1288C758B00DFD1F1 /* AppDelegate.swift in Sources */,
 				F10EC4E0288C7E2500DFD1F1 /* CalendarBodyView.swift in Sources */,
 				F10EC4D6288C766A00DFD1F1 /* CalendarView.swift in Sources */,
+				D62F06BE292C24440033F125 /* CarrouselCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
